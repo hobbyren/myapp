@@ -6,7 +6,7 @@ pipeline {
                 sh 'TAG1=main_${BUILD_NUMBER}'
                 sh 'export TAG=$TAG1'
                 sh 'docker-compose build'
-                sh 'echo tag=${TAG}'
+                sh 'echo tag=$TAG'
             }
         }
         stage('Deploy') {
