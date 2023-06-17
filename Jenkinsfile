@@ -4,9 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'VERSION=main-${BUILD_NUMBER}'
-                sh 'docker-compose build'
+                sh 'docker-compose build -e VERSION=${VERSION}' 
                 sh 'echo version= $VERSION'
-                sh 'export VERSION=$VERSION'
             }
         }
         stage('Deploy') {
