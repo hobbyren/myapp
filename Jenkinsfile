@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'TAG=main_${BUILD_NUMBER}'
-                sh 'docker build -t hkccr.ccs.tencentyun.com/myapp/publicmyapp:${TAG}'
+                sh 'docker build -t hkccr.ccs.tencentyun.com/myapp/publicmyapp:$TAG'
             }
         }
         stage('Deploy') {
