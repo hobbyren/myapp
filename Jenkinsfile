@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker-compose build'
-                sh 'echo version= ${BUIRL_NUMBER}'
+                sh 'echo version= ${BUILD_NUMBER}'
             }
         }
         stage('Deploy') {
