@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'TAG=main_${BUILD_NUMBER}'
-                sh 'echo TAG=${VERSION} > .env'
-                sh 'docker-compose --env-file .env build'
+                sh 'TAG1=main_${BUILD_NUMBER}'
+                sh 'export TAG=$TAG1'
+                sh 'docker-compose build'
+                sh 'echo tag=${TAG}'
             }
         }
         stage('Deploy') {
