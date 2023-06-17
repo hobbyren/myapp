@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'main-${BUILD_NUMBER}'
+                sh 'VERSION=main-${BUILD_NUMBER}'
                 sh 'docker-compose build'
                 sh 'echo version= $VERSION'
                 sh 'export VERSION=$VERSION'
