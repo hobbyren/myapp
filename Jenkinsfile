@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker-compose build'
+                sh 'echo version is ${Version}'
             }
         }
         stage('Deploy') {
