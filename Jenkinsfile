@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh  'VERSION=$(git  branch --show-current)-${BUILD_NUMBER}'
+                sh  'VERSION=${BRANCH}-${BUILD_NUMBER}'
                 sh 'docker-compose build'
                 sh 'echo version= $VERSION'
             }
