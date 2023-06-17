@@ -1,7 +1,11 @@
 version: '3'
 services:
   web:
+<<<<<<< HEAD
     image: hkccr.ccs.tencentyun.com/myapp/publicmyapp:${VERSION}
+=======
+    image: hkccr.ccs.tencentyun.com/myapp/publicmyapp:v0.0.3
+>>>>>>> 6ba2662 (merge)
     build: .
     ports:
       - "80:80"
