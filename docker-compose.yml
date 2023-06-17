@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: hkccr.ccs.tencentyun.com/myapp/publicmyapp:$VERSION
+    image: hkccr.ccs.tencentyun.com/myapp/publicmyapp:${VERSION}
     build: .
     ports:
       - "80:80"
