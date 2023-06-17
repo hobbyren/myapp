@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh  'VERSION=${BRANCH}-${BUILD_NUMBER}'
+                sh  '$(echo ${BRANCH} |sed 's/origin\///' | sed 's/\//:/')-${BUILD_NUMBER}'
                 sh 'docker-compose build'
                 sh 'echo version= $VERSION'
+                sh 'export VERSION=$VERSION'
             }
         }
         stage('Deploy') {
