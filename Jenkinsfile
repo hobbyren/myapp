@@ -3,10 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'TAG1=main_${BUILD_NUMBER}'
-                sh 'export TAG=$TAG1'
-                sh 'docker-compose build'
-                sh 'echo tag=$TAG'
+                sh 'TAG=main_${BUILD_NUMBER}'
+                sh 'docker build -t hkccr.ccs.tencentyun.com/myapp/publicmyapp:${TAG}'
             }
         }
         stage('Deploy') {
